@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 314626957}
   - component: {fileID: 314626956}
   - component: {fileID: 314626958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,9 +328,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1576925378}
   - component: {fileID: 1576925377}
-  - component: {fileID: 1576925380}
   - component: {fileID: 1576925379}
-  m_Layer: 0
+  - component: {fileID: 1576925380}
+  - component: {fileID: 1576925381}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,9 +446,23 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1576925381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576925376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03da297703fdaf4ea6468f9562a29a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpForce: 15
