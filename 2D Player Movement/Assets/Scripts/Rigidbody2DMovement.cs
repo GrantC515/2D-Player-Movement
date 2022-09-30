@@ -22,11 +22,29 @@ public class Rigidbody2DMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       float horizontalInput = Input.GetAxis("Horizontal");
+        PlayerMovement();
+
+        PlayerJump();
+    }
+
+    void PlayerMovement()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
 
        _myRB.velocity = new Vector2(horizontalInput * moveSpeed, _myRB.velocity.y); 
+    }
 
-       if(Input.GetButtonDown("Jump"))
+    void PlayerJump()
+    {
+        if(_myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            isOnGround = true;
+        }
+        else{
+            isOnGround = false;
+        }
+
+        if(Input.GetButtonDown("Jump") && isOnGround == true)
        {
             _myRB.velocity = new Vector2(_myRB.velocity.x, jumpForce);
        }
